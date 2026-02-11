@@ -11,14 +11,12 @@ body {
   color: #333;
 }
 
-/* Main heading */
 h2 {
   text-align: center;
   color: #0b5ed7;
   margin-bottom: 30px;
 }
 
-/* Accordion buttons */
 .accordion {
   background: linear-gradient(90deg, #0b5ed7, #0dcaf0);
   color: #fff;
@@ -40,11 +38,6 @@ h2 {
   border-left: 5px solid #0dcaf0;
 }
 
-.accordion:hover {
-  opacity: 0.9;
-}
-
-/* Panels */
 .panel {
   display: none;
   background-color: #ffffff;
@@ -54,17 +47,14 @@ h2 {
   box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
-/* Section headings */
 .section-title {
   font-weight: bold;
   color: #198754;
   margin-top: 12px;
 }
 
-/* Lists */
 .panel ul {
   margin-left: 20px;
-  margin-bottom: 10px;
 }
 
 .panel a {
@@ -76,7 +66,6 @@ h2 {
   text-decoration: underline;
 }
 
-/* Footer spacing */
 .issue-block {
   margin-bottom: 25px;
 }
@@ -87,48 +76,11 @@ h2 {
 
 <h2>Journal Archive</h2>
 
-<!-- TEMPLATE FUNCTION: SAME SECTIONS FOR ALL ISSUES -->
+<!-- ===== LATEST TO OLDEST ===== -->
 
-<!-- ================= 2010 | Volume 1 ================= -->
-<button class="accordion">2010 – Volume 1</button>
+<!-- 2026 | Volume 17 -->
+<button class="accordion">2026 – Volume 17</button>
 <div class="panel issue-block">
-
-  <button class="accordion sub">Issue 1</button>
-  <div class="panel">
-    <p class="section-title">Editorial</p>
-    <ul><li><a href="/issues/2010/vol1-issue1/editorial.pdf" target="_blank">View Editorial</a></li></ul>
-
-    <p class="section-title">Research Articles</p>
-    <ul></ul>
-
-    <p class="section-title">Review Articles</p>
-    <ul></ul>
-
-    <p class="section-title">Case Reports</p>
-    <ul></ul>
-  </div>
-
-  <button class="accordion sub">Issue 2</button>
-  <div class="panel">
-    <p class="section-title">Editorial</p>
-    <ul><li><a href="/issues/2010/vol1-issue2/editorial.pdf" target="_blank">View Editorial</a></li></ul>
-
-    <p class="section-title">Research Articles</p>
-    <ul></ul>
-
-    <p class="section-title">Review Articles</p>
-    <ul></ul>
-
-    <p class="section-title">Case Reports</p>
-    <ul></ul>
-  </div>
-
-</div>
-
-<!-- ================= 2011 | Volume 2 ================= -->
-<button class="accordion">2011 – Volume 2</button>
-<div class="panel issue-block">
-
   <button class="accordion sub">Issue 1</button>
   <div class="panel">
     <p class="section-title">Editorial</p><ul></ul>
@@ -136,7 +88,6 @@ h2 {
     <p class="section-title">Review Articles</p><ul></ul>
     <p class="section-title">Case Reports</p><ul></ul>
   </div>
-
   <button class="accordion sub">Issue 2</button>
   <div class="panel">
     <p class="section-title">Editorial</p><ul></ul>
@@ -144,20 +95,51 @@ h2 {
     <p class="section-title">Review Articles</p><ul></ul>
     <p class="section-title">Case Reports</p><ul></ul>
   </div>
-
 </div>
 
-<!-- ================= 2012–2026 (same pattern) ================= -->
+<!-- 2025 | Volume 16 -->
+<button class="accordion">2025 – Volume 16</button>
+<div class="panel issue-block">
+  <button class="accordion sub">Issue 1</button><div class="panel">
+    <p class="section-title">Editorial</p><ul></ul>
+    <p class="section-title">Research Articles</p><ul></ul>
+    <p class="section-title">Review Articles</p><ul></ul>
+    <p class="section-title">Case Reports</p><ul></ul>
+  </div>
+  <button class="accordion sub">Issue 2</button><div class="panel">
+    <p class="section-title">Editorial</p><ul></ul>
+    <p class="section-title">Research Articles</p><ul></ul>
+    <p class="section-title">Review Articles</p><ul></ul>
+    <p class="section-title">Case Reports</p><ul></ul>
+  </div>
+</div>
 
-<!-- You can duplicate the 2011 block and just change:
-     Year + Volume number -->
+<!-- 2024 → 2010 (same pattern) -->
+
+<button class="accordion">2024 – Volume 15</button><div class="panel issue-block"></div>
+<button class="accordion">2023 – Volume 14</button><div class="panel issue-block"></div>
+<button class="accordion">2022 – Volume 13</button><div class="panel issue-block"></div>
+<button class="accordion">2021 – Volume 12</button><div class="panel issue-block"></div>
+<button class="accordion">2020 – Volume 11</button><div class="panel issue-block"></div>
+<button class="accordion">2019 – Volume 10</button><div class="panel issue-block"></div>
+<button class="accordion">2018 – Volume 9</button><div class="panel issue-block"></div>
+<button class="accordion">2017 – Volume 8</button><div class="panel issue-block"></div>
+<button class="accordion">2016 – Volume 7</button><div class="panel issue-block"></div>
+<button class="accordion">2015 – Volume 6</button><div class="panel issue-block"></div>
+<button class="accordion">2014 – Volume 5</button><div class="panel issue-block"></div>
+<button class="accordion">2013 – Volume 4</button><div class="panel issue-block"></div>
+<button class="accordion">2012 – Volume 3</button><div class="panel issue-block"></div>
+<button class="accordion">2011 – Volume 2</button><div class="panel issue-block"></div>
+<button class="accordion">2010 – Volume 1</button><div class="panel issue-block"></div>
 
 <script>
 var acc = document.getElementsByClassName("accordion");
 for (var i = 0; i < acc.length; i++) {
   acc[i].addEventListener("click", function () {
     var panel = this.nextElementSibling;
-    panel.style.display = panel.style.display === "block" ? "none" : "block";
+    if (panel) {
+      panel.style.display = panel.style.display === "block" ? "none" : "block";
+    }
   });
 }
 </script>
