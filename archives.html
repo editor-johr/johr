@@ -213,14 +213,27 @@ footer {
 </footer>
 
 <script>
-var acc = document.getElementsByClassName("accordion");
-for (var i = 0; i < acc.length; i++) {
-  acc[i].addEventListener("click", function () {
-    var panel = this.nextElementSibling;
-    panel.style.display = panel.style.display === "block" ? "none" : "block";
+document.addEventListener("DOMContentLoaded", function () {
+  const accordions = document.querySelectorAll(".accordion");
+
+  accordions.forEach(function (btn) {
+    btn.addEventListener("click", function (e) {
+      e.stopPropagation(); // VERY IMPORTANT for nested accordions
+
+      const panel = btn.nextElementSibling;
+      if (!panel) return;
+
+      if (panel.style.display === "block") {
+        panel.style.display = "none";
+      } else {
+        panel.style.display = "block";
+      }
+    });
   });
-}
+});
 </script>
+
 
 </body>
 </html>
+
