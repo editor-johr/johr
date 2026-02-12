@@ -2,172 +2,99 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>JOHR Archives</title>
+<title>Archives | JOHR</title>
 
 <style>
-body {
-  font-family: "Segoe UI", Arial, sans-serif;
-  background-color: #f5f8fb;
-  color: #333;
+body{
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 20px;
 }
 
-h2 {
-  text-align: center;
-  color: #0b5ed7;
-  margin-bottom: 30px;
+h2{
+    border-bottom: 2px solid #444;
+    padding-bottom: 5px;
 }
 
-.accordion {
-  background: linear-gradient(90deg, #0b5ed7, #0dcaf0);
-  color: #fff;
-  cursor: pointer;
-  padding: 14px 18px;
-  width: 100%;
-  text-align: left;
-  border: none;
-  font-size: 17px;
-  margin-top: 10px;
-  border-radius: 6px;
+.volume{
+    margin-top: 25px;
 }
 
-.accordion.sub {
-  background: #e9f2ff;
-  color: #0b5ed7;
-  margin-left: 15px;
-  font-size: 15px;
-  border-left: 5px solid #0dcaf0;
+.issue{
+    margin-left: 20px;
+    margin-top: 10px;
 }
 
-.panel {
-  display: none;
-  background-color: #ffffff;
-  padding: 15px 25px;
-  margin-left: 10px;
-  border-radius: 6px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+.section{
+    margin-left: 40px;
 }
 
-.section-title {
-  font-weight: bold;
-  color: #198754;
-  margin-top: 12px;
+a{
+    text-decoration: none;
+    color: #0056b3;
 }
 
-.panel ul {
-  margin-left: 20px;
-}
-
-.panel a {
-  color: #0b5ed7;
-  text-decoration: none;
-}
-
-.panel a:hover {
-  text-decoration: underline;
-}
-
-.issue-block {
-  margin-bottom: 25px;
+a:hover{
+    text-decoration: underline;
 }
 </style>
 </head>
 
 <body>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Journal of Oral Health and Research (JOHR)</title>
-    <link rel="stylesheet" href="style.css">
-</head>
+<h1>Journal Archives</h1>
 
-<body>
-
-<header>
-    <h1>Journal of Oral Health and Research (JOHR)</h1>
- <strong>P-ISSN:</strong> 0976-5328 &nbsp; | &nbsp;
-        <strong>E-ISSN:</strong> 2229-4082 &nbsp; | &nbsp;
-        <strong>Frequency:</strong> Biannual &nbsp; | &nbsp;
-        <strong>Peer Reviewed Journal</strong> &nbsp; | &nbsp;
-        <strong>Open Access</strong> &nbsp; | &nbsp;
-        <strong>Multidisciplinary Dental Journal</strong>
-
-
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="editorial.html">Editorial Board</a>
-        <a href="guidelines.html">Author Guidelines</a>
-        <a href="archives.html">Archives</a>
-        <a href="submit.html">Submit Manuscript</a>
-        <a href="contact.html">Contact</a>
-    </nav>
-</header>
-
-<!-- ===== JOURNAL BANNER (NOW CENTERED) ===== -->
-
-<div class="journal-banner">
-    <p>
-       
-<!-- ===== LATEST TO OLDEST ===== -->
-
-</div>
-
-<!-- 2025 | Volume 16 -->
-<button class="accordion">2025 – Volume 16</button>
-<div class="panel issue-block">
-  <button class="accordion sub">Issue 1</button><div class="panel">
-    <p class="section-title">Editorial</p><ul></ul>
-    <p class="section-title">Research Articles</p><ul></ul>
-    <p class="section-title">Review Articles</p><ul></ul>
-    <p class="section-title">Case Reports</p><ul></ul>
-  </div>
-  <button class="accordion sub">Issue 2</button><div class="panel">
-    <p class="section-title">Editorial</p><ul></ul>
-    <p class="section-title">Research Articles</p><ul></ul>
-    <p class="section-title">Review Articles</p><ul></ul>
-    <p class="section-title">Case Reports</p><ul></ul>
-  </div>
-</div>
-
-<!-- 2024 → 2010 (same pattern) -->
-
-<button class="accordion">2024 – Volume 15</button><div class="panel issue-block"></div>
-<button class="accordion">2023 – Volume 14</button><div class="panel issue-block"></div>
-<button class="accordion">2022 – Volume 13</button><div class="panel issue-block"></div>
-<button class="accordion">2021 – Volume 12</button><div class="panel issue-block"></div>
-<button class="accordion">2020 – Volume 11</button><div class="panel issue-block"></div>
-<button class="accordion">2019 – Volume 10</button><div class="panel issue-block"></div>
-<button class="accordion">2018 – Volume 9</button><div class="panel issue-block"></div>
-<button class="accordion">2017 – Volume 8</button><div class="panel issue-block"></div>
-<button class="accordion">2016 – Volume 7</button><div class="panel issue-block"></div>
-<button class="accordion">2015 – Volume 6</button><div class="panel issue-block"></div>
-<button class="accordion">2014 – Volume 5</button><div class="panel issue-block"></div>
-<button class="accordion">2013 – Volume 4</button><div class="panel issue-block"></div>
-<button class="accordion">2012 – Volume 3</button><div class="panel issue-block"></div>
-<button class="accordion">2011 – Volume 2</button><div class="panel issue-block"></div>
-<button class="accordion">2010 – Volume 1</button><div class="panel issue-block"></div>
+<!-- ===== LOOP VOLUMES ===== -->
 
 <script>
-var acc = document.getElementsByClassName("accordion");
-for (var i = 0; i < acc.length; i++) {
-  acc[i].addEventListener("click", function () {
-    var panel = this.nextElementSibling;
-    if (panel) {
-      panel.style.display = panel.style.display === "block" ? "none" : "block";
-    }
-  });
+const volumes = [
+  {year:2025, vol:16},
+  {year:2024, vol:15},
+  {year:2023, vol:14},
+  {year:2022, vol:13},
+  {year:2021, vol:12},
+  {year:2020, vol:11},
+  {year:2019, vol:10},
+  {year:2018, vol:9},
+  {year:2017, vol:8},
+  {year:2016, vol:7},
+  {year:2015, vol:6},
+  {year:2014, vol:5},
+  {year:2013, vol:4},
+  {year:2012, vol:3},
+  {year:2011, vol:2},
+  {year:2010, vol:1}
+];
+
+volumes.forEach(v => {
+
+document.write(`<div class="volume">
+<h2>Volume ${v.vol} (${v.year})</h2>`);
+
+for(let i=1;i<=2;i++){
+
+document.write(`
+<div class="issue">
+<h3>Issue ${i}</h3>
+
+<div class="section">
+<ul>
+<li><a href="archives/vol${v.vol}-issue${i}.html#editorial">Editorial</a></li>
+<li><a href="archives/vol${v.vol}-issue${i}.html#research">Research Articles</a></li>
+<li><a href="archives/vol${v.vol}-issue${i}.html#review">Review Articles</a></li>
+<li><a href="archives/vol${v.vol}-issue${i}.html#case">Case Reports</a></li>
+</ul>
+</div>
+
+</div>
+`);
+
 }
+
+document.write(`</div>`);
+
+});
 </script>
-
-</body>
-</html>
-</main>
-
-<footer>
-    <p>© JOHR 2010 – Present</p>
-</footer>
 
 </body>
 </html>
