@@ -5,36 +5,57 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>JOHR Archives</title>
+<title>Archives | Journal of Oral Health and Research</title>
 
 <style>
 
 body{
 font-family: Arial, sans-serif;
 margin:0;
-background:#f9fafc;
+background:#f8fafc;
 }
+
+/* ===== HEADER ===== */
 
 header{
-background:#0c4a6e;
+background:#0f766e;
 color:white;
-padding:20px;
+padding:18px;
 text-align:center;
 }
 
-footer{
-background:#0c4a6e;
-color:white;
-text-align:center;
-padding:10px;
-margin-top:40px;
+header h1{
+margin:0;
 }
+
+/* ===== NAV ===== */
+
+nav{
+background:#134e4a;
+padding:10px;
+text-align:center;
+}
+
+nav a{
+color:white;
+margin:0 15px;
+text-decoration:none;
+font-weight:bold;
+}
+
+nav a:hover{
+text-decoration:underline;
+}
+
+/* ===== MAIN CONTAINER ===== */
 
 .container{
 width:90%;
 max-width:900px;
 margin:30px auto;
 }
+
+/* ===== ACCORDION ===== */
 
 .accordion{
 background:#e2e8f0;
@@ -43,7 +64,7 @@ padding:14px;
 width:100%;
 border:none;
 text-align:left;
-font-size:18px;
+font-size:17px;
 margin-top:6px;
 border-radius:6px;
 transition:0.3s;
@@ -57,19 +78,29 @@ background:#cbd5e1;
 display:none;
 padding:0 15px;
 background:white;
-border-left:4px solid #0c4a6e;
+border-left:4px solid #0f766e;
 }
 
 .section-links a{
 display:block;
 padding:6px 0;
 text-decoration:none;
-color:#0c4a6e;
+color:#0f766e;
 font-weight:500;
 }
 
 .section-links a:hover{
 text-decoration:underline;
+}
+
+/* ===== FOOTER ===== */
+
+footer{
+background:#0f766e;
+color:white;
+text-align:center;
+padding:12px;
+margin-top:40px;
 }
 
 </style>
@@ -78,12 +109,27 @@ text-decoration:underline;
 
 <body>
 
+<!-- ===== HEADER ===== -->
+
 <header>
-<h1>Journal of Oral Health Research</h1>
+<h1>Journal of Oral Health and Research</h1>
 <p>Archives</p>
 </header>
 
+<!-- ===== NAVIGATION ===== -->
+
+<nav>
+<a href="index.html">Home</a>
+<a href="archives.html">Archives</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+</nav>
+
+<!-- ===== ARCHIVE CONTENT ===== -->
+
 <div class="container">
+
+<h2 style="text-align:center;">Archives</h2>
 
 <script>
 function createVolume(vol, year){
@@ -115,8 +161,6 @@ document.write(`
 }
 </script>
 
-<!-- ===== VOLUMES AUTO GENERATED ===== -->
-
 <script>
 
 createVolume(16, 2025);
@@ -140,9 +184,13 @@ createVolume(1, 2010);
 
 </div>
 
+<!-- ===== FOOTER ===== -->
+
 <footer>
-© Journal of Oral Health Research
+<p>© Journal of Oral Health and Research</p>
 </footer>
+
+<!-- ===== ACCORDION SCRIPT ===== -->
 
 <script>
 
@@ -150,7 +198,7 @@ var acc=document.getElementsByClassName("accordion");
 
 for (var i=0;i<acc.length;i++){
 acc[i].addEventListener("click",function(){
-this.classList.toggle("active");
+
 var panel=this.nextElementSibling;
 
 if(panel.style.display==="block"){
@@ -158,6 +206,7 @@ panel.style.display="none";
 }else{
 panel.style.display="block";
 }
+
 });
 }
 
