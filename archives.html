@@ -1,53 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Archives | Journal of Oral Health Research</title>
+<title>JOHR Archives</title>
 
 <style>
 
 body{
 font-family: Arial, sans-serif;
-margin:20px;
+margin:0;
+background:#f9fafc;
 }
 
-h2{
+header{
+background:#0c4a6e;
+color:white;
+padding:20px;
 text-align:center;
-margin-bottom:30px;
+}
+
+footer{
+background:#0c4a6e;
+color:white;
+text-align:center;
+padding:10px;
+margin-top:40px;
+}
+
+.container{
+width:90%;
+max-width:900px;
+margin:30px auto;
 }
 
 .accordion{
-background-color:#f4f4f4;
+background:#e2e8f0;
 cursor:pointer;
-padding:15px;
+padding:14px;
 width:100%;
 border:none;
 text-align:left;
 font-size:18px;
-margin-top:8px;
+margin-top:6px;
 border-radius:6px;
 transition:0.3s;
 }
 
 .accordion:hover{
-background-color:#e0e0e0;
+background:#cbd5e1;
 }
 
 .panel{
-padding:0 15px;
 display:none;
+padding:0 15px;
 background:white;
-border-left:3px solid #0077cc;
-margin-bottom:10px;
+border-left:4px solid #0c4a6e;
 }
 
 .section-links a{
 display:block;
 padding:6px 0;
 text-decoration:none;
-color:#0077cc;
+color:#0c4a6e;
+font-weight:500;
 }
 
 .section-links a:hover{
@@ -57,65 +75,74 @@ text-decoration:underline;
 </style>
 
 </head>
+
 <body>
 
-<h2>Archives</h2>
+<header>
+<h1>Journal of Oral Health Research</h1>
+<p>Archives</p>
+</header>
 
-<!-- ===== Volume 16 ===== -->
+<div class="container">
 
-<button class="accordion">Volume 16 (2025)</button>
+<script>
+function createVolume(vol, year){
+document.write(`
+
+<button class="accordion">Volume ${vol} (${year})</button>
+
 <div class="panel">
 
 <button class="accordion">Issue 1</button>
 <div class="panel section-links">
-
-<a href="archives/vol16-issue1/editorial.html">Editorial</a>
-<a href="archives/vol16-issue1/research.html">Research Articles</a>
-<a href="archives/vol16-issue1/review.html">Review Articles</a>
-<a href="archives/vol16-issue1/case.html">Case Reports</a>
-
+<a href="archives/vol${vol}-issue1/editorial.html">Editorial</a>
+<a href="archives/vol${vol}-issue1/research.html">Research Articles</a>
+<a href="archives/vol${vol}-issue1/review.html">Review Articles</a>
+<a href="archives/vol${vol}-issue1/case.html">Case Reports</a>
 </div>
 
 <button class="accordion">Issue 2</button>
 <div class="panel section-links">
-
-<a href="archives/vol16-issue2/editorial.html">Editorial</a>
-<a href="archives/vol16-issue2/research.html">Research Articles</a>
-<a href="archives/vol16-issue2/review.html">Review Articles</a>
-<a href="archives/vol16-issue2/case.html">Case Reports</a>
-
+<a href="archives/vol${vol}-issue2/editorial.html">Editorial</a>
+<a href="archives/vol${vol}-issue2/research.html">Research Articles</a>
+<a href="archives/vol${vol}-issue2/review.html">Review Articles</a>
+<a href="archives/vol${vol}-issue2/case.html">Case Reports</a>
 </div>
 
 </div>
 
+`);
+}
+</script>
 
-<!-- ===== Volume 15 ===== -->
+<!-- ===== VOLUMES AUTO GENERATED ===== -->
 
-<button class="accordion">Volume 15 (2024)</button>
-<div class="panel">
+<script>
 
-<button class="accordion">Issue 1</button>
-<div class="panel section-links">
+createVolume(16, 2025);
+createVolume(15, 2024);
+createVolume(14, 2023);
+createVolume(13, 2022);
+createVolume(12, 2021);
+createVolume(11, 2020);
+createVolume(10, 2019);
+createVolume(9, 2018);
+createVolume(8, 2017);
+createVolume(7, 2016);
+createVolume(6, 2015);
+createVolume(5, 2014);
+createVolume(4, 2013);
+createVolume(3, 2012);
+createVolume(2, 2011);
+createVolume(1, 2010);
 
-<a href="archives/vol15-issue1/editorial.html">Editorial</a>
-<a href="archives/vol15-issue1/research.html">Research Articles</a>
-<a href="archives/vol15-issue1/review.html">Review Articles</a>
-<a href="archives/vol15-issue1/case.html">Case Reports</a>
+</script>
 
 </div>
 
-<button class="accordion">Issue 2</button>
-<div class="panel section-links">
-
-<a href="archives/vol15-issue2/editorial.html">Editorial</a>
-<a href="archives/vol15-issue2/research.html">Research Articles</a>
-<a href="archives/vol15-issue2/review.html">Review Articles</a>
-<a href="archives/vol15-issue2/case.html">Case Reports</a>
-
-</div>
-
-</div>
-
+<footer>
+© Journal of Oral Health Research
+</footer>
 
 <script>
 
@@ -128,8 +155,7 @@ var panel=this.nextElementSibling;
 
 if(panel.style.display==="block"){
 panel.style.display="none";
-}
-else{
+}else{
 panel.style.display="block";
 }
 });
