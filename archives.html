@@ -1,140 +1,141 @@
 <!DOCTYPE html>
-<html>
-<head>
-<title>Aim & Scope - JOHR</title>
-<link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-
-<header>
-<h1>Journal of Oral Health and Research (JOHR)</h1>
- <strong>P-ISSN:</strong> 0976-5328 &nbsp; | &nbsp;
-        <strong>E-ISSN:</strong> 2229-4082 &nbsp; | &nbsp;
-        <strong>Frequency:</strong> Biannual &nbsp; | &nbsp;
-        <strong>Peer Reviewed Journal</strong> &nbsp; | &nbsp;
-        <strong>Open Access</strong> &nbsp; | &nbsp;
-        <strong>Multidisciplinary Dental Journal</strong>
-
-
-<nav>
-<a href="index.html">Home</a>
-<a href="about.html">About</a>
-<a href="editorial.html">Editorial Board</a>
-<a href="guidelines.html">Author Guidelines</a>
-<a href="archives.html">Archives</a>
-<a href="submit.html">Submit Manuscript</a>
-<a href="contact.html">Contact</a>
-</nav>
-</header>
-
-<main>
-
-<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Archives | JOHR</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Archives | Journal of Oral Health Research</title>
 
 <style>
+
 body{
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    margin: 20px;
+font-family: Arial, sans-serif;
+margin:20px;
 }
 
 h2{
-    border-bottom: 2px solid #444;
-    padding-bottom: 5px;
+text-align:center;
+margin-bottom:30px;
 }
 
-.volume{
-    margin-top: 25px;
+.accordion{
+background-color:#f4f4f4;
+cursor:pointer;
+padding:15px;
+width:100%;
+border:none;
+text-align:left;
+font-size:18px;
+margin-top:8px;
+border-radius:6px;
+transition:0.3s;
 }
 
-.issue{
-    margin-left: 20px;
-    margin-top: 10px;
+.accordion:hover{
+background-color:#e0e0e0;
 }
 
-.section{
-    margin-left: 40px;
+.panel{
+padding:0 15px;
+display:none;
+background:white;
+border-left:3px solid #0077cc;
+margin-bottom:10px;
 }
 
-a{
-    text-decoration: none;
-    color: #0056b3;
+.section-links a{
+display:block;
+padding:6px 0;
+text-decoration:none;
+color:#0077cc;
 }
 
-a:hover{
-    text-decoration: underline;
+.section-links a:hover{
+text-decoration:underline;
 }
+
 </style>
-</head>
 
+</head>
 <body>
 
-<h1>Journal Archives</h1>
+<h2>Archives</h2>
 
-<!-- ===== LOOP VOLUMES ===== -->
+<!-- ===== Volume 16 ===== -->
+
+<button class="accordion">Volume 16 (2025)</button>
+<div class="panel">
+
+<button class="accordion">Issue 1</button>
+<div class="panel section-links">
+
+<a href="archives/vol16-issue1/editorial.html">Editorial</a>
+<a href="archives/vol16-issue1/research.html">Research Articles</a>
+<a href="archives/vol16-issue1/review.html">Review Articles</a>
+<a href="archives/vol16-issue1/case.html">Case Reports</a>
+
+</div>
+
+<button class="accordion">Issue 2</button>
+<div class="panel section-links">
+
+<a href="archives/vol16-issue2/editorial.html">Editorial</a>
+<a href="archives/vol16-issue2/research.html">Research Articles</a>
+<a href="archives/vol16-issue2/review.html">Review Articles</a>
+<a href="archives/vol16-issue2/case.html">Case Reports</a>
+
+</div>
+
+</div>
+
+
+<!-- ===== Volume 15 ===== -->
+
+<button class="accordion">Volume 15 (2024)</button>
+<div class="panel">
+
+<button class="accordion">Issue 1</button>
+<div class="panel section-links">
+
+<a href="archives/vol15-issue1/editorial.html">Editorial</a>
+<a href="archives/vol15-issue1/research.html">Research Articles</a>
+<a href="archives/vol15-issue1/review.html">Review Articles</a>
+<a href="archives/vol15-issue1/case.html">Case Reports</a>
+
+</div>
+
+<button class="accordion">Issue 2</button>
+<div class="panel section-links">
+
+<a href="archives/vol15-issue2/editorial.html">Editorial</a>
+<a href="archives/vol15-issue2/research.html">Research Articles</a>
+<a href="archives/vol15-issue2/review.html">Review Articles</a>
+<a href="archives/vol15-issue2/case.html">Case Reports</a>
+
+</div>
+
+</div>
+
 
 <script>
-const volumes = [
-  {year:2025, vol:16},
-  {year:2024, vol:15},
-  {year:2023, vol:14},
-  {year:2022, vol:13},
-  {year:2021, vol:12},
-  {year:2020, vol:11},
-  {year:2019, vol:10},
-  {year:2018, vol:9},
-  {year:2017, vol:8},
-  {year:2016, vol:7},
-  {year:2015, vol:6},
-  {year:2014, vol:5},
-  {year:2013, vol:4},
-  {year:2012, vol:3},
-  {year:2011, vol:2},
-  {year:2010, vol:1}
-];
 
-volumes.forEach(v => {
+var acc=document.getElementsByClassName("accordion");
 
-document.write(`<div class="volume">
-<h2>Volume ${v.vol} (${v.year})</h2>`);
+for (var i=0;i<acc.length;i++){
+acc[i].addEventListener("click",function(){
+this.classList.toggle("active");
+var panel=this.nextElementSibling;
 
-for(let i=1;i<=2;i++){
-
-document.write(`
-<div class="issue">
-<h3>Issue ${i}</h3>
-
-<div class="section">
-<ul>
-<li><a href="archives/vol${v.vol}-issue${i}.html#editorial">Editorial</a></li>
-<li><a href="archives/vol${v.vol}-issue${i}.html#research">Research Articles</a></li>
-<li><a href="archives/vol${v.vol}-issue${i}.html#review">Review Articles</a></li>
-<li><a href="archives/vol${v.vol}-issue${i}.html#case">Case Reports</a></li>
-</ul>
-</div>
-
-</div>
-`);
-
+if(panel.style.display==="block"){
+panel.style.display="none";
+}
+else{
+panel.style.display="block";
+}
+});
 }
 
-document.write(`</div>`);
-
-});
 </script>
-
-</body>
-</html>
-</main>
-
-<footer>
-<p>© JOHR 2010-Present</p>
-</footer>
 
 </body>
 </html>
